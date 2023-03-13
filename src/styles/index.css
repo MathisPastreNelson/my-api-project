@@ -13,6 +13,14 @@ h1 {
   justify-content: center;
 }
 
+.movie_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: salmon;
+  min-height: 500px;
+}
+
 footer {
   background-color: red;
   text-align: center;
