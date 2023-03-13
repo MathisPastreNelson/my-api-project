@@ -4,4 +4,16 @@ body {
 
 * {
   margin: 0;
+}
+
+h1 {
+  background-color: yellow;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+footer {
+  background-color: red;
+  text-align: center;
 }/*# sourceMappingURL=index.css.map */
