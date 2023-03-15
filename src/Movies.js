@@ -13,12 +13,25 @@ export default function Movies() {
         setMovies(data.results);
         console.log(movies);
       });
-  }, []);
+  }, [movies]);
   // Le rendu
   return (
     <div className="movie_box">
+      <h2>Films récents populaires :</h2>
       {movies.map((movie) => (
-        <p key={movie.id}>{movie.title}</p>
+        <div className="movie_article" key={movie.id}>
+          <h3>{movie.title}</h3>
+          <img
+            className="movie_img"
+            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+            alt="Affiche du film"
+          />
+          {movie.overview ? (
+            <p>{movie.overview}</p>
+          ) : (
+            <p>Description non disponible</p>
+          )}
+        </div>
       ))}
     </div>
   );
