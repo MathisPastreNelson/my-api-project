@@ -1,15 +1,21 @@
 import "./styles/index.css";
-import Header from "./Header";
-import Movies from "./Movies";
-import Footer from "./Footer";
+/* Package pour la création/gestion des routes*/
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from "react";
+
+import Home from "./pages/Home";
+import SpecificMovie from "./pages/SpecificMovie";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Movies />
-      <Footer />
-    </div>
+    <React.StrictMode>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/my-api-project" element={<Home />} />
+          <Route path="/my-api-project/:id" element={<SpecificMovie />} />
+        </Routes>
+      </BrowserRouter>
+    </React.StrictMode>
   );
 }
 

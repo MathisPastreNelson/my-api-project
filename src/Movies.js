@@ -16,23 +16,29 @@ export default function Movies() {
   }, [movies]);
   // Le rendu
   return (
-    <div className="movie_box">
+    <div className="movie_container">
       <h2>Films récents populaires :</h2>
-      {movies.map((movie) => (
-        <div className="movie_article" key={movie.id}>
-          <h3>{movie.title}</h3>
-          <img
-            className="movie_img"
-            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-            alt="Affiche du film"
-          />
-          {movie.overview ? (
-            <p>{movie.overview}</p>
-          ) : (
-            <p>Description non disponible</p>
-          )}
-        </div>
-      ))}
+      <div className="movie_box">
+        {/* Le .map qui va récupéré l'enssemble des données de API_URL */}
+        {movies.map((movie) => (
+          <a
+            href={`my-api-project/${movie.id}`}
+            className="movie_article"
+            key={movie.id}>
+            <h3>{movie.title}</h3>
+            <img
+              className="movie_img"
+              src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+              alt="Affiche du film"
+            />
+            {/* {movie.overview ? (
+              <p>{movie.overview}</p>
+            ) : (
+              <p>Description non disponible</p>
+            )} */}
+          </a>
+        ))}
+      </div>
     </div>
   );
 }
