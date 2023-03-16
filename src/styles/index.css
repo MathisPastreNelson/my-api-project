@@ -6,11 +6,16 @@ body {
   margin: 0;
 }
 
+h3 {
+  text-align: center;
+}
+
 h1 {
-  background-color: yellow;
+  background-color: black;
   font-size: 50px;
   display: flex;
   justify-content: center;
+  color: red;
 }
 
 .movie_container {
@@ -55,7 +60,28 @@ h1 {
   border: 1px solid black;
 }
 
+.movieTitle {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.backIndex {
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.movieDescription {
+  text-align: center;
+  margin: 0 10px;
+}
+
+.movieBudget {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
 footer {
-  background-color: red;
+  background-color: black;
+  color: red;
   text-align: center;
 }/*# sourceMappingURL=index.css.map */

@@ -29,21 +29,22 @@ export default function Movies() {
     <div>
       <Header />
       <div className="movie_container">
-        <div>
-          <h2>{movies.title}</h2>
-          <img
-            className="movie_img"
-            src={`https://image.tmdb.org/t/p/w500/${movies.poster_path}`}
-            alt="Affiche du film"
-          />
-          <p>{movies.overview}</p>
-          <p>
-            Budget :{" "}
-            {movies.budget > 0 ? movies.budget / 1000000 : "Non renseigné"}
-            {movies.budget > 0 && " M"}
-          </p>
-        </div>
-        <a href="../my-api-project">Retour à la page d'index</a>
+        <h2 className="movieTitle">{movies.title}</h2>
+        <img
+          className="movie_img"
+          src={`https://image.tmdb.org/t/p/w500/${movies.poster_path}`}
+          alt="Affiche du film"
+        />
+        <p className="movieDescription">{movies.overview}</p>
+        <p className="movieBudget">
+          Budget :{" "}
+          {movies.budget > 0 ? movies.budget / 1000000 : "Non renseigné"}
+          {movies.budget > 0 && " M"}
+        </p>
+
+        <a className="backIndex" href="../my-api-project">
+          Retour à l'index
+        </a>
       </div>
       <Footer />
     </div>
