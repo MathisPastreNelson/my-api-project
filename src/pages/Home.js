@@ -25,7 +25,7 @@ export default function Movies() {
     <div>
       <Header />
       <div className="movie_container">
-        <h2>Films récents populaires :</h2>
+        <h2 className="movie_introduce">Films récents populaires :</h2>
         <div className="movie_box">
           {/* Le .map qui va récupéré l'enssemble des données de API_URL */}
           {movies.map((movie) => (
