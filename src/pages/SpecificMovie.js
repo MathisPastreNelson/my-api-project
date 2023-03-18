@@ -30,6 +30,7 @@ export default function Movies() {
       <Header />
       <div className="movie_container">
         <h2 className="movieTitle">{movies.title}</h2>
+        <p>Date de sortie : {movies.release_date}</p>
         <img
           className="movie_img"
           src={`https://image.tmdb.org/t/p/w500/${movies.poster_path}`}
@@ -41,7 +42,6 @@ export default function Movies() {
           {movies.budget > 0 ? movies.budget / 1000000 : "Non renseigné"}
           {movies.budget > 0 && " M"}
         </p>
-
         <a className="backIndex" href="../my-api-project">
           Retour à l'index
         </a>
