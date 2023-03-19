@@ -42,7 +42,7 @@ export default function Movies() {
         <NavLink
           className="movie_article"
           key="Généraliste"
-          to={"/my-api-project/global"}>
+          to={"/my-api-project/general"}>
           Généraliste
         </NavLink>
       </nav>
