@@ -1,5 +1,5 @@
 body {
-  background-color: #f2f2f2;
+  background-color: salmon;
 }
 
 * {
@@ -19,12 +19,18 @@ h1 {
   color: red;
 }
 
+.navLink_Bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(250, 235, 215, 0);
+}
+
 .movie_container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: salmon;
 }
 
 .movie_introduce {
