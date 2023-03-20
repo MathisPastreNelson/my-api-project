@@ -29,14 +29,14 @@ export default function Movies() {
         {" "}
         <NavLink
           className="movie_article"
-          key="Horreur"
-          to={"/my-api-project/horror"}>
+          key="comedy"
+          to={"/my-api-project/comedy"}>
           Comédie
         </NavLink>
         <NavLink
           className="movie_article"
-          key="Comédie"
-          to={"/my-api-project/comedy"}>
+          key="horror"
+          to={"/my-api-project/horror"}>
           Horreur
         </NavLink>
         <NavLink
