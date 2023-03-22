@@ -30,6 +30,7 @@
   transition: 400ms;
   text-decoration: none;
   color: black;
+  min-height: 410px;
 }
 
 .movie_article:hover {
@@ -41,4 +42,5 @@
   margin: 2vh;
   border-radius: 15px;
   border: 1px solid black;
+  min-height: 340px;
 }

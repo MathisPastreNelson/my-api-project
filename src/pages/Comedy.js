@@ -5,6 +5,9 @@ import { NavLink } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
+// Images
+import affiche404 from "../assets/affiche_nondisponible.jpg";
+
 export default function Comedy() {
   // Les states
   const [movies, setMovies] = useState([]);
@@ -19,6 +22,8 @@ export default function Comedy() {
       });
   }, [API_URL]);
 
+  console.log(movies);
+
   return (
     <div>
       <Header />
@@ -26,14 +31,13 @@ export default function Comedy() {
         <h2 className="movie_introduce">Comédies récentes :</h2>
         <nav className="navLink_Bar">
           <NavLink
-            className="movie_article"
             key="less"
             onClick={() => setMoviePage(moviePage - 1)} // mettre à jour l'état
           >
             Sortie plus récente
           </NavLink>
+          <p>Page : {moviePage}</p>
           <NavLink
-            className="movie_article"
             key="plus"
             onClick={() => setMoviePage(moviePage + 1)} // mettre à jour l'état
           >
@@ -48,16 +52,20 @@ export default function Comedy() {
               key={movie.id}
               to={"/my-api-project/" + movie.id}>
               <h3>{movie.title}</h3>
-              <img
-                className="movie_img"
-                src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                alt="Affiche du film"
-              />
-              {/* {movie.overview ? (
-              <p>{movie.overview}</p>
-            ) : (
-              <p>Description non disponible</p>
-            )} */}
+              {movie.poster_path === null ? (
+                <img
+                  className="movie_img"
+                  src={affiche404}
+                  alt="Affiche du film"
+                />
+              ) : (
+                <img
+                  className="movie_img"
+                  src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                  alt="Affiche du film"
+                />
+              )}
+              <p>Date de sortie : {movie.release_date}</p>
             </NavLink>
           ))}
         </div>

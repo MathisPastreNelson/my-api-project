@@ -24,6 +24,11 @@ h1 {
   justify-content: center;
   align-items: center;
   background-color: rgba(250, 235, 215, 0);
+  text-align: center;
+}
+
+.navLink_Bar > * {
+  padding: 10px;
 }
 
 .movie_container {
@@ -58,6 +63,7 @@ h1 {
   transition: 400ms;
   text-decoration: none;
   color: black;
+  min-height: 410px;
 }
 
 .movie_article:hover {
@@ -69,6 +75,7 @@ h1 {
   margin: 2vh;
   border-radius: 15px;
   border: 1px solid black;
+  min-height: 340px;
 }
 
 .movieTitle {
