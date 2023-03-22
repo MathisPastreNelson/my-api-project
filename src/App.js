@@ -16,9 +16,9 @@ function App() {
         <Routes>
           <Route path="/my-api-project" element={<Home />} />
           <Route path="/my-api-project/:id" element={<SpecificMovie />} />
-          <Route path="/my-api-project/horror/*" element={<Horror />} />
-          <Route path="/my-api-project/comedy/*" element={<Comedy />} />
-          <Route path="/my-api-project/general/*" element={<General />} />
+          <Route path="/my-api-project/horror" element={<Horror />} />
+          <Route path="/my-api-project/comedy" element={<Comedy />} />
+          <Route path="/my-api-project/general" element={<General />} />
         </Routes>
       </BrowserRouter>
     </React.StrictMode>
