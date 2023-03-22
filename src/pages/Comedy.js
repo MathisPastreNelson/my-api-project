@@ -8,17 +8,16 @@ import Footer from "../components/Footer";
 export default function Comedy() {
   // Les states
   const [movies, setMovies] = useState([]);
-  const [moviePage, setMoviePage] = useState(25);
+  const [moviePage, setMoviePage] = useState(20);
   const API_URL = `https://api.themoviedb.org/3/discover/movie?api_key=f8aa98bfbb1c2940f9b235241e070eee&language=fr_fr&sort_by=release_date.desc&page=${moviePage}&with_genres=35`;
 
-  // UseEffect
   useEffect(() => {
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => {
         setMovies(data.results);
       });
-  }, [movies, API_URL]);
+  }, [API_URL]);
 
   return (
     <div>
@@ -26,10 +25,18 @@ export default function Comedy() {
       <div className="movie_container">
         <h2 className="movie_introduce">Comédies récentes :</h2>
         <nav className="navLink_Bar">
-          <NavLink className="movie_article" key="less" to={setMoviePage - 1}>
+          <NavLink
+            className="movie_article"
+            key="less"
+            onClick={() => setMoviePage(moviePage - 1)} // mettre à jour l'état
+          >
             Sortie plus récente
           </NavLink>
-          <NavLink className="movie_article" key="plus" to={setMoviePage + 1}>
+          <NavLink
+            className="movie_article"
+            key="plus"
+            onClick={() => setMoviePage(moviePage + 1)} // mettre à jour l'état
+          >
             Sortie plus ancienne
           </NavLink>
         </nav>

@@ -26,11 +26,10 @@ export default function Movies() {
     <div>
       <Header />
       <nav className="navLink_Bar">
-        {" "}
         <NavLink
           className="movie_article"
           key="comedy"
-          to={"/my-api-project/comedy"}>
+          to={`/my-api-project/comedy/`}>
           Comédie
         </NavLink>
         <NavLink
