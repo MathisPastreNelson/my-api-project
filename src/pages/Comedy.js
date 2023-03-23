@@ -8,6 +8,9 @@ import Footer from "../components/Footer";
 // Images
 import affiche404 from "../assets/affiche_nondisponible.jpg";
 
+// Icones
+import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
+
 export default function Comedy() {
   // Les states
   const [movies, setMovies] = useState([]);
@@ -32,22 +35,22 @@ export default function Comedy() {
           Page d'index
         </NavLink>
         <h2 className="movie_introduce">Comédies récentes :</h2>
+        <p className="textInfo">La page 20 correspond aux films actuels.</p>
         <nav className="navLink_Bar">
           <NavLink
             key="less"
             onClick={() => setMoviePage(moviePage - 1)} // mettre à jour l'état
           >
-            Sorties prochaines
+            <FaArrowAltCircleLeft className="arrowIcon" />
           </NavLink>
-          <p>Page : {moviePage}</p>
+          <p className="pageNumber">Page : {moviePage}</p>
           <NavLink
             key="plus"
             onClick={() => setMoviePage(moviePage + 1)} // mettre à jour l'état
           >
-            Sorties plus anciennes
+            <FaArrowAltCircleRight className="arrowIcon" />
           </NavLink>
         </nav>
-        <p>La page 20 correspond aux films actuels.</p>
         <div className="movie_box">
           {/* Le .map qui va récupéré l'enssemble des données de API_URL */}
           {movies.map((movie) => (

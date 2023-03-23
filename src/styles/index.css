@@ -36,6 +36,31 @@ h1 {
   color: #313131;
 }
 
+.pageNumber {
+  background-color: rgb(196, 80, 67);
+  padding: 10px 0;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.textInfo {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.arrowIcon {
+  font-size: 30px;
+  color: rgb(165, 70, 60);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 300ms;
+}
+
+.arrowIcon:hover {
+  transform: scale(1.4);
+}
+
 .navLink_Bar {
   display: flex;
   justify-content: space-evenly;
