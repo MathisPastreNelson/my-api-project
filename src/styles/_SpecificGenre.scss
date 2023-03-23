@@ -1,17 +1,7 @@
-.navLink_Bar {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  background-color: rgba(250, 235, 215, 0);
-  text-align: center;
-}
-.navLink_Bar > * {
-  padding: 10px;
-}
-
-.genre_article {
+.back_toIndex {
   background-color: rgb(214, 73, 57);
   margin: 20px 0 0 0;
+  padding: 10px;
   border: 1px solid black;
   border-radius: 10px;
   transition: 200ms;
@@ -19,7 +9,7 @@
   color: #000;
 }
 
-.genre_article:hover {
+.back_toIndex:hover {
   transform: scale(1.1);
   background-color: rgb(226, 108, 95);
   color: #313131;

@@ -28,22 +28,26 @@ export default function Comedy() {
     <div>
       <Header />
       <div className="movie_container">
+        <NavLink className="back_toIndex" key="comedy" to={`/my-api-project/`}>
+          Page d'index
+        </NavLink>
         <h2 className="movie_introduce">Comédies récentes :</h2>
         <nav className="navLink_Bar">
           <NavLink
             key="less"
             onClick={() => setMoviePage(moviePage - 1)} // mettre à jour l'état
           >
-            Sortie plus récente
+            Sorties prochaines
           </NavLink>
           <p>Page : {moviePage}</p>
           <NavLink
             key="plus"
             onClick={() => setMoviePage(moviePage + 1)} // mettre à jour l'état
           >
-            Sortie plus ancienne
+            Sorties plus anciennes
           </NavLink>
         </nav>
+        <p>La page 20 correspond aux films actuels.</p>
         <div className="movie_box">
           {/* Le .map qui va récupéré l'enssemble des données de API_URL */}
           {movies.map((movie) => (

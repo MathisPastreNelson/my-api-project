@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 // Les composants
 import Header from "../components/Header";
+import GenreSelect from "../components/GenreSelect";
 import Footer from "../components/Footer";
-import { NavLink } from "react-router-dom";
 
 const API_URL =
   "https://api.themoviedb.org/3/movie/popular?api_key=f8aa98bfbb1c2940f9b235241e070eee&language=fr";
@@ -25,26 +26,7 @@ export default function Movies() {
   return (
     <div>
       <Header />
-      <nav className="navLink_Bar">
-        <NavLink
-          className="movie_article"
-          key="comedy"
-          to={`/my-api-project/comedy/`}>
-          Comédie
-        </NavLink>
-        <NavLink
-          className="movie_article"
-          key="horror"
-          to={"/my-api-project/horror"}>
-          Horreur
-        </NavLink>
-        <NavLink
-          className="movie_article"
-          key="Généraliste"
-          to={"/my-api-project/general"}>
-          Généraliste
-        </NavLink>
-      </nav>
+      <GenreSelect />
 
       <div className="movie_container">
         <h2 className="movie_introduce">Films récents populaires :</h2>
