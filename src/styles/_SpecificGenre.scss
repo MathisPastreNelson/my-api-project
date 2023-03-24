@@ -1,5 +1,11 @@
 .back_toIndex {
-  background-color: rgb(214, 73, 57);
+  background: rgb(4, 0, 7);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 0, 0, 0.452) 0%,
+    rgb(173, 2, 2) 50%,
+    rgba(255, 0, 0, 0.452) 100%
+  );
   margin: 20px 0 0 0;
   padding: 10px;
   border: 1px solid black;
@@ -7,6 +13,7 @@
   transition: 200ms;
   text-decoration: none;
   color: #000;
+  border: 1px solid white;
 }
 
 .back_toIndex:hover {
@@ -16,20 +23,27 @@
 }
 
 .pageNumber {
-  background-color: rgb(196, 80, 67);
+  background: rgb(4, 0, 7);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 0, 0, 0.452) 0%,
+    rgb(173, 2, 2) 50%,
+    rgba(255, 0, 0, 0.452) 100%
+  );
   padding: 10px 0;
   border: 1px solid black;
   border-radius: 10px;
+  border: 1px solid white;
 }
 
 .textInfo {
   margin: 20px 0;
   text-align: center;
+  color: white;
 }
 
 .arrowIcon {
   font-size: 30px;
-  color: rgb(165, 70, 60);
   display: flex;
   justify-content: center;
   align-items: center;

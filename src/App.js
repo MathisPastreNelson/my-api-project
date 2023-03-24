@@ -7,7 +7,7 @@ import Home from "./pages/Home";
 import SpecificMovie from "./pages/SpecificMovie";
 import Horror from "./pages/Horror";
 import Comedy from "./pages/Comedy";
-import General from "./pages/General";
+import Action from "./pages/Action";
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
           <Route path="/my-api-project/:id" element={<SpecificMovie />} />
           <Route path="/my-api-project/horror" element={<Horror />} />
           <Route path="/my-api-project/comedy" element={<Comedy />} />
-          <Route path="/my-api-project/general" element={<General />} />
+          <Route path="/my-api-project/action" element={<Action />} />
         </Routes>
       </BrowserRouter>
     </React.StrictMode>

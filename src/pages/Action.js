@@ -11,11 +11,11 @@ import affiche404 from "../assets/affiche_nondisponible.jpg";
 // Icones
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 
-export default function Horror() {
+export default function Action() {
   // Les states
   const [movies, setMovies] = useState([]);
-  const [moviePage, setMoviePage] = useState(10);
-  const API_URL = `https://api.themoviedb.org/3/discover/movie?api_key=f8aa98bfbb1c2940f9b235241e070eee&language=fr_fr&sort_by=release_date.desc&page=${moviePage}&with_genres=27`;
+  const [moviePage, setMoviePage] = useState(15);
+  const API_URL = `https://api.themoviedb.org/3/discover/movie?api_key=f8aa98bfbb1c2940f9b235241e070eee&language=fr_fr&sort_by=release_date.desc&page=${moviePage}&with_genres=28`;
 
   useEffect(() => {
     fetch(API_URL)
@@ -34,8 +34,8 @@ export default function Horror() {
         <NavLink className="back_toIndex" key="comedy" to={`/my-api-project/`}>
           Page d'index
         </NavLink>
-        <h2 className="movie_introduce">Films d'horreurs :</h2>
-        <p className="textInfo">La page 10 correspond aux films actuels.</p>
+        <h2 className="movie_introduce">Films d'actions :</h2>
+        <p className="textInfo">La page 15 correspond aux films actuels.</p>
         <nav className="navLink_Bar">
           <NavLink
             key="less"

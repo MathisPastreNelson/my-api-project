@@ -18,9 +18,9 @@ export default function GenreSelect() {
       </NavLink>
       <NavLink
         className="genre_article"
-        key="Généraliste"
-        to={"/my-api-project/general"}>
-        Généraliste
+        key="action"
+        to={"/my-api-project/action"}>
+        Action
       </NavLink>
     </nav>
   );
