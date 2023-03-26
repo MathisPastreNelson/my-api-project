@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 // Les composants
 import Header from "../components/Header";
 import GenreSelect from "../components/GenreSelect";
+import SearchBar from "../components/SearchBar";
 import Footer from "../components/Footer";
 
 const API_URL =
@@ -30,6 +31,8 @@ export default function Movies() {
 
       <div className="movie_container">
         <h2 className="movie_introduce">Films récents populaires :</h2>
+        <SearchBar />
+
         <div className="movie_box">
           {/* Le .map qui va récupéré l'enssemble des données de API_URL */}
           {movies.map((movie) => (

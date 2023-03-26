@@ -1,0 +1,35 @@
+.researchForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.researchButton {
+  color: black;
+  background-color: #b6ffade5;
+  border-radius: 8px;
+  height: 45px;
+  width: 228px;
+  margin: 0 5px;
+  font-size: 22px;
+  text-align: center;
+  transition: 200ms;
+  cursor: pointer;
+}
+
+.researchButton:hover {
+  background-color: #94f187e5;
+  border-radius: 15px;
+}
+
+.researchInput {
+  color: black;
+  background-color: #f2f2f2;
+  border-radius: 4px;
+  height: 40px;
+  width: 220px;
+  margin: 0 5px;
+  font-size: 18px;
+  text-align: center;
+}
