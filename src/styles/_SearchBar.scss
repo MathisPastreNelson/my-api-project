@@ -33,3 +33,34 @@
   font-size: 18px;
   text-align: center;
 }
+
+.searchResults {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 0, 0, 0.452) 0%,
+    rgb(173, 2, 2) 50%,
+    rgba(255, 0, 0, 0.452) 100%
+  );
+  padding: 2rem 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1rem 0 0 0;
+}
+
+.movie_searched_article {
+  margin: 0.5rem;
+}
+
+.movie_img_searched {
+  width: 80px;
+  height: 120px;
+}
+
+.movie_title_searched {
+  font-size: 14px;
+
+  width: 10rem;
+  margin: 0.5rem;
+}
