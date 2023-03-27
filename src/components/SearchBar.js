@@ -27,6 +27,8 @@ export default function SearchBar() {
     setQuery(query);
   };
 
+  const maxResults = 16;
+
   return (
     <form className="researchForm" onSubmit={handleSearch}>
       <input
@@ -36,31 +38,34 @@ export default function SearchBar() {
         className="researchInput"
         onChange={(event) => setQuery(event.target.value)}
       />
-      <button className="researchButton" type="submit">
-        Rechercher
-      </button>
-      <div className="searchResults">
-        {movies.map((result) => (
-          <div className="movie_searched_article" key={result.id}>
-            <NavLink to={"/my-api-project/" + result.id}>
-              <h3 className="movie_title_searched">{result.title}</h3>
-              {result.poster_path === null ? (
-                <img
-                  className="movie_img_searched"
-                  src={affiche404}
-                  alt="Affiche du film"
-                />
-              ) : (
-                <img
-                  className="movie_img_searched"
-                  src={`https://image.tmdb.org/t/p/w500/${result.poster_path}`}
-                  alt="Affiche du film"
-                />
-              )}
-            </NavLink>
-          </div>
-        ))}
-      </div>
+      {query && (
+        <div className="searchResults">
+          {movies.slice(0, maxResults).map(
+            (
+              result // Utiliser slice() pour limiter le nombre de résultats affichés
+            ) => (
+              <div className="movie_searched_article" key={result.id}>
+                <NavLink to={"/my-api-project/" + result.id}>
+                  <h3 className="movie_title_searched">{result.title}</h3>
+                  {result.poster_path === null ? (
+                    <img
+                      className="movie_img_searched"
+                      src={affiche404}
+                      alt="Affiche du film"
+                    />
+                  ) : (
+                    <img
+                      className="movie_img_searched"
+                      src={`https://image.tmdb.org/t/p/w500/${result.poster_path}`}
+                      alt="Affiche du film"
+                    />
+                  )}
+                </NavLink>
+              </div>
+            )
+          )}
+        </div>
+      )}
     </form>
   );
 }

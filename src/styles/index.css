@@ -51,7 +51,7 @@ h1 {
   border-radius: 4px;
   height: 40px;
   width: 220px;
-  margin: 0 5px;
+  margin: 1rem 0;
   font-size: 18px;
   text-align: center;
 }
@@ -63,7 +63,7 @@ h1 {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 1rem 0 0 0;
+  margin: 1rem 0;
 }
 
 .movie_searched_article {
@@ -132,6 +132,7 @@ h1 {
   align-items: center;
   background-color: rgba(250, 235, 215, 0);
   text-align: center;
+  margin: 0 0 1rem 0;
 }
 
 .navLink_Bar > * {
@@ -217,7 +218,7 @@ h1 {
 
 .movieDescription {
   text-align: center;
-  margin: 0 10px;
+  width: 60%;
 }
 
 .movieBudget {
