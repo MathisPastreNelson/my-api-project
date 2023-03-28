@@ -1,6 +1,7 @@
 .navLink_Bar {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
   background-color: rgba(250, 235, 215, 0);
   text-align: center;
