@@ -8,49 +8,64 @@ import Footer from "../components/Footer";
 // Images
 import affiche404 from "../assets/affiche_nondisponible.jpg";
 
-// Icones
-import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
+import { FaCircleNotch } from "react-icons/fa";
 
 export default function Horror() {
   // Les states
   const [movies, setMovies] = useState([]);
-  const [moviePage, setMoviePage] = useState(10);
+  const [moviePage, setMoviePage] = useState(1);
   const API_URL = `https://api.themoviedb.org/3/discover/movie?api_key=f8aa98bfbb1c2940f9b235241e070eee&language=fr_fr&sort_by=release_date.desc&page=${moviePage}&with_genres=27`;
 
+  const [totalPages, setTotalPages] = useState(1);
+  const maxPagesToShow = 11;
+  const startPage = Math.max(1, moviePage - Math.floor(maxPagesToShow / 2));
+  const endPage = Math.min(totalPages, startPage + maxPagesToShow - 1);
+  const [loading, setLoading] = useState(true); // Nouveau state pour l'indicateur de chargement
+
   useEffect(() => {
+    setLoading(true); // Afficher l'indicateur de chargement avant de lancer la requête
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => {
         setMovies(data.results);
+        setTotalPages(data.total_pages);
+        setLoading(false); // Masquer l'indicateur de chargement après avoir reçu les données
       });
   }, [API_URL]);
-
-  console.log(movies);
 
   return (
     <div>
       <Header />
       <div className="movie_container">
-        <NavLink className="back_toIndex" key="comedy" to={`/my-api-project/`}>
+        <NavLink className="back_toIndex" key="index" to={`/my-api-project/`}>
           Page d'index
         </NavLink>
-        <h2 className="movie_introduce">Films d'horreurs :</h2>
-        <p className="textInfo">La page 10 correspond aux films actuels.</p>
+        <h2 className="movie_introduce">Films d'horreur :</h2>
+        <p className="textInfo">Vous etes sur la page {moviePage}.</p>
         <nav className="navLink_Bar">
-          <NavLink
-            key="less"
-            onClick={() => setMoviePage(moviePage - 1)} // mettre à jour l'état
-          >
-            <FaArrowAltCircleLeft className="arrowIcon" />
-          </NavLink>
-          <p className="pageNumber">Page : {moviePage}</p>
-          <NavLink
-            key="plus"
-            onClick={() => setMoviePage(moviePage + 1)} // mettre à jour l'état
-          >
-            <FaArrowAltCircleRight className="arrowIcon" />
-          </NavLink>
+          {Array.from(
+            { length: endPage - startPage + 1 },
+            (_, i) => i + startPage
+          ).map(
+            (pageNumber) =>
+              pageNumber <= 499 && (
+                <NavLink
+                  key={`page${pageNumber}`}
+                  onClick={() => setMoviePage(pageNumber)}
+                  className={moviePage === pageNumber ? "active" : ""}>
+                  {pageNumber}
+                </NavLink>
+              )
+          )}
         </nav>
+
+        {/* Afficher l'indicateur de chargement si les données sont en cours de chargement */}
+        {loading && (
+          <div className="loader">
+            <FaCircleNotch className="loaderIcon" /> Chargement...
+          </div>
+        )}
+
         <div className="movie_box">
           {/* Le .map qui va récupéré l'enssemble des données de API_URL */}
           {movies.map((movie) => (
