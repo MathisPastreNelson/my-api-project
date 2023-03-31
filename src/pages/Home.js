@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import GenreSelect from "../components/GenreSelect";
 import SearchBar from "../components/SearchBar";
 import Footer from "../components/Footer";
+import RandomMovieImage from "../components/RandomMovieImage";
 
 const API_URL =
   "https://api.themoviedb.org/3/movie/popular?api_key=f8aa98bfbb1c2940f9b235241e070eee&language=fr";
@@ -32,7 +33,6 @@ export default function Movies() {
       <div className="movie_container">
         <SearchBar />
         <h2 className="movie_introduce">Films récents populaires :</h2>
-
         <div className="movie_box">
           {/* Le .map qui va récupéré l'enssemble des données de API_URL */}
           {movies.map((movie) => (
@@ -48,12 +48,13 @@ export default function Movies() {
               />
               {/* {movie.overview ? (
               <p>{movie.overview}</p>
-            ) : (
-              <p>Description non disponible</p>
-            )} */}
+              ) : (
+                <p>Description non disponible</p>
+              )} */}
             </NavLink>
           ))}
         </div>
+        <RandomMovieImage />
       </div>
       <Footer />
     </div>

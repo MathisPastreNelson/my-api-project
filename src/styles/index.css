@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   background-color: rgb(0, 0, 0);
 }
@@ -18,6 +19,31 @@ h1 {
   display: flex;
   justify-content: center;
   color: red;
+}
+
+.movie-image {
+  opacity: 0; /* Définit l'opacité à 0 pour cacher l'image */
+  transition: opacity 0.5s ease-in-out; /* Ajoute une transition de fondu de 0.5 seconde avec une accélération et un ralentissement */
+  height: 400px;
+  border-radius: 20px;
+}
+
+.movie-image.loaded {
+  opacity: 1; /* Lorsque la classe "loaded" est appliquée, l'opacité passe à 1, ce qui affiche l'image */
+}
+
+.randomMovie_Box {
+  background: linear-gradient(180deg, rgba(255, 0, 0, 0.452) 0%, rgb(173, 2, 2) 50%, rgba(255, 0, 0, 0.452) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.randomMovieText {
+  text-align: center;
 }
 
 .researchForm {
