@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/my-api-project/static/css/main.7bd794c2.css",
-    "main.js": "/my-api-project/static/js/main.5cd6a441.js",
+    "main.css": "/my-api-project/static/css/main.db58a793.css",
+    "main.js": "/my-api-project/static/js/main.8d5f65db.js",
     "static/media/les_fils_de_l_homme-2.jpg": "/my-api-project/static/media/les_fils_de_l_homme-2.db429ccf87532f17acca.jpg",
     "static/media/affiche_nondisponible.jpg": "/my-api-project/static/media/affiche_nondisponible.05c1af1158674af5fd11.jpg",
     "index.html": "/my-api-project/index.html",
-    "main.7bd794c2.css.map": "/my-api-project/static/css/main.7bd794c2.css.map",
-    "main.5cd6a441.js.map": "/my-api-project/static/js/main.5cd6a441.js.map"
+    "main.db58a793.css.map": "/my-api-project/static/css/main.db58a793.css.map",
+    "main.8d5f65db.js.map": "/my-api-project/static/js/main.8d5f65db.js.map"
   },
   "entrypoints": [
-    "static/css/main.7bd794c2.css",
-    "static/js/main.5cd6a441.js"
+    "static/css/main.db58a793.css",
+    "static/js/main.8d5f65db.js"
   ]
 }
