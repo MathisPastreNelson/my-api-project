@@ -24,8 +24,11 @@ h1 {
 .movie-image {
   opacity: 0; /* Définit l'opacité à 0 pour cacher l'image */
   transition: opacity 0.5s ease-in-out; /* Ajoute une transition de fondu de 0.5 seconde avec une accélération et un ralentissement */
-  height: 400px;
-  border-radius: 20px;
+  height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 40%;
+     object-position: 50% 40%;
 }
 
 .movie-image.loaded {
@@ -33,17 +36,22 @@ h1 {
 }
 
 .randomMovie_Box {
-  background: linear-gradient(180deg, rgba(255, 0, 0, 0.452) 0%, rgb(173, 2, 2) 50%, rgba(255, 0, 0, 0.452) 100%);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 1rem;
-  border-radius: 10px;
 }
 
 .randomMovieText {
   text-align: center;
+  padding: 0 0 1rem 0;
+}
+
+.randomImage_container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .researchForm {
@@ -180,14 +188,13 @@ h1 {
 
 .genre_article {
   background: rgb(4, 0, 7);
-  background: linear-gradient(180deg, rgba(255, 0, 0, 0.452) 0%, rgb(173, 2, 2) 50%, rgba(255, 0, 0, 0.452) 100%);
+  background: linear-gradient(180deg, rgba(9, 127, 196, 0.705) 0%, rgba(8, 193, 240, 0.705) 50%, rgba(9, 127, 196, 0.705) 100%);
   margin: 20px 0 0 0;
   border: 1px solid black;
   border-radius: 10px;
   transition: 200ms;
   text-decoration: none;
   color: white;
-  border: 1px solid white;
 }
 
 .genre_article:hover {
@@ -269,4 +276,5 @@ footer {
   background-color: black;
   color: red;
   text-align: center;
+  padding: 1rem;
 }/*# sourceMappingURL=index.css.map */

@@ -29,7 +29,11 @@ export default function Movies() {
     <div>
       <Header />
       <GenreSelect />
-
+      <div className="randomImage_container">
+        <RandomMovieImage />
+        <RandomMovieImage />
+        <RandomMovieImage />
+      </div>
       <div className="movie_container">
         <SearchBar />
         <h2 className="movie_introduce">Films récents populaires :</h2>
@@ -54,7 +58,6 @@ export default function Movies() {
             </NavLink>
           ))}
         </div>
-        <RandomMovieImage />
       </div>
       <Footer />
     </div>

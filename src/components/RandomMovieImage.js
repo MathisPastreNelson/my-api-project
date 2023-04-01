@@ -14,9 +14,11 @@ const RandomMovieImage = () => {
       const randomMovieId = Math.floor(Math.random() * 90000); // Génère un nombre aléatoire entre 1 et 100000
       const apiUrl = `https://api.themoviedb.org/3/movie/${randomMovieId}?api_key=${apiKey}`;
       const response = await axios.get(apiUrl);
-      setMovieImage(
-        `https://image.tmdb.org/t/p/w500/${response.data.poster_path}`
-      );
+      if (response.data.poster_path) {
+        setMovieImage(
+          `https://image.tmdb.org/t/p/w500/${response.data.poster_path}`
+        );
+      }
     };
 
     fetchMovie();
@@ -25,7 +27,7 @@ const RandomMovieImage = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCounter((prevCounter) => prevCounter + 1);
-    }, 5000);
+    }, 3000);
 
     return () => {
       clearInterval(intervalId);
@@ -34,14 +36,16 @@ const RandomMovieImage = () => {
 
   return (
     <div className="randomMovie_Box">
-      <h3>Pas d'idée ?</h3>
-      <p className="randomMovieText">Films aléatoire : </p>
-      {movieImage === null ? (
-        <img src={defaultImage} alt="random movie" />
-      ) : (
+      {movieImage ? (
         <img
           className="movie-image loaded"
           src={movieImage}
+          alt="random movie"
+        />
+      ) : (
+        <img
+          className="movie-image loaded"
+          src={defaultImage}
           alt="random movie"
         />
       )}

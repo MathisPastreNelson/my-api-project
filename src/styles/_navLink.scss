@@ -15,9 +15,9 @@
   background: rgb(4, 0, 7);
   background: linear-gradient(
     180deg,
-    rgba(255, 0, 0, 0.452) 0%,
-    rgb(173, 2, 2) 50%,
-    rgba(255, 0, 0, 0.452) 100%
+    rgba(9, 127, 196, 0.705) 0%,
+    rgba(8, 193, 240, 0.705) 50%,
+    rgba(9, 127, 196, 0.705) 100%
   );
   margin: 20px 0 0 0;
   border: 1px solid black;
@@ -25,7 +25,6 @@
   transition: 200ms;
   text-decoration: none;
   color: white;
-  border: 1px solid white;
 }
 
 .genre_article:hover {
